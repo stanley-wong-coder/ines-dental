@@ -408,7 +408,7 @@
       <div style="flex: 0.8; min-width: 180px;">
         <div style="background:#e5f0eb; border-radius: 2rem; padding: 1.4rem; text-align:center;">
           <span style="font-size: 2rem;">⭐</span>
-          <p style="font-weight:500; margin-top:0.5rem;">3+ year guarantee <br>on selected restorative treatments</p>
+          <p style="font-weight:500; margin-top:0.5rem;">2+ year guarantee <br>on selected restorative treatments</p>
           <small>If a covered treatment fails, it will be repaired or replaced free of charge.</small>
         </div>
       </div>
@@ -482,27 +482,30 @@
       </div>
     </div>
 
-    <!-- contact form -->
-    <div style="background:#ffffff; border-radius: 2rem; margin: 1rem 0 2rem; padding: 0.5rem 0 1rem 0;">
+  <!-- contact form -->
+  <div style="background:#ffffff; border-radius: 2rem; margin: 1rem 0 2rem; padding: 0.5rem 0 1rem 0;">
       <h3>💬 Send us a message</h3>
-      <p>We’ll get back to you as soon as possible. For urgent matters, please call us directly.</p>
-      <form id="contactForm">
-        <div class="form-group">
-          <input type="text" id="name" placeholder="Your full name *" required>
-        </div>
-        <div class="form-group">
-          <input type="email" id="email" placeholder="Email address *" required>
-        </div>
-                <div class="form-group">
-          <input type="phone" id="phone" placeholder="Phone number *" required>
-        </div>
-        <div class="form-group">
-          <textarea rows="3" id="message" placeholder="How can we help you?"></textarea>
-        </div>
-        <button type="submit" class="btn" style="background:#2c7a5e;">Send message</button>
+      <p>We'll get back to you as soon as possible. For urgent matters, please call us directly.</p>
+      
+      <form id="contactForm" netlify name="contact" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="contact">
+          
+          <div class="form-group">
+              <input type="text" name="name" placeholder="Your full name *" required>
+          </div>
+          <div class="form-group">
+              <input type="email" name="email" placeholder="Email address *" required>
+          </div>
+          <div class="form-group">
+              <input type="tel" name="phone" placeholder="Phone number *" required>
+          </div>
+          <div class="form-group">
+              <textarea rows="3" name="message" placeholder="How can we help you?"></textarea>
+          </div>
+          <button type="submit" class="btn" style="background:#2c7a5e;">Send message</button>
       </form>
+      
       <p style="font-size:0.75rem; margin-top:1rem;">📋 We treat your data with care. Your message will be answered via email or phone.</p>
-    </div>
   </div>
 </main>
 
@@ -515,7 +518,7 @@
 
 <script>
   (function() {
-    const form = document.getElementById('contactForm');
+/*     const form = document.getElementById('contactForm');
     if (form) {
       form.addEventListener('submit', (e) => {
         e.preventDefault();
@@ -529,7 +532,7 @@
         showToast('✅ Message sent — we’ll get back to you shortly.');
         form.reset();
       });
-    }
+    } */
 
     function showToast(msg) {
       const existing = document.querySelector('.toast-msg');
